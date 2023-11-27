@@ -25,9 +25,8 @@ const ProductDetailedPage = () => {
   useEffect(() => {
     async function getData() {
       setLoading(true);
-      const product = await fetch(
-        `https://fakestoreapi.com/products/${id}`
-      ).then((res) => res.json());
+      const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+      const product = await res.json();
       setProduct(product);
       setLoading(false);
     }
@@ -59,8 +58,9 @@ const ProductDetailedPage = () => {
                       {product?.rating.rate && (
                         <div className="flex items-center ml-2 mr-6">
                           <ReactStars
-														value={product.rating.rate}
-														edit={false} />
+                            value={product.rating.rate}
+                            edit={false}
+                          />
                           {/* {Array.from(
                             {
                               length: Math.floor(product.rating.rate),
