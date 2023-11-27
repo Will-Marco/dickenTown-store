@@ -7,6 +7,7 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import { useParams, useRouter } from "next/navigation";
 import { Dialog } from "@headlessui/react";
 import CustomImage from "@/components/Custom-Image";
+import ReactStars from "react-stars";
 
 const ProductDetailedPage = () => {
   const [loading, setLoading] = useState(false);
@@ -57,7 +58,10 @@ const ProductDetailedPage = () => {
                       <p>{product?.rating.rate}</p>
                       {product?.rating.rate && (
                         <div className="flex items-center ml-2 mr-6">
-                          {Array.from(
+                          <ReactStars
+														value={product.rating.rate}
+														edit={false} />
+                          {/* {Array.from(
                             {
                               length: Math.floor(product.rating.rate),
                             },
@@ -76,7 +80,7 @@ const ProductDetailedPage = () => {
                                 className="h-4 w-4 text-yellow-500"
                               />
                             )
-                          )}
+                          )} */}
                         </div>
                       )}
                       <p className="text-blue-600 hover:underline cursor-pointer text-xs">
