@@ -1,6 +1,8 @@
 import Product from "@/components/Product";
 import { ProductType } from "./interfaces";
 import Hero from "@/components/Hero";
+import Cta from "@/components/CTA";
+import Statistics from "@/components/Statistics";
 
 const Home = async () => {
   const products: ProductType[] = await fetch(
@@ -18,6 +20,8 @@ const Home = async () => {
           ))}
         </div>
       </section>
+      <Cta />
+      <Statistics />
     </main>
   );
 };
