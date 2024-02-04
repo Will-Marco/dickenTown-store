@@ -23,7 +23,7 @@ const CustomImage: FC<Props> = ({ product, fill }) => {
             ? 'scale-110 blur-2xl grayscale'
             : 'scale-100 blur-0 grayscale-0'
         }}`}
-        onLoadingComplete={() => setIsLoading(false)}
+        onLoad={() => setIsLoading(false)}
       />
     ) : (
       <Image
@@ -36,7 +36,7 @@ const CustomImage: FC<Props> = ({ product, fill }) => {
             ? 'scale-110 blur-2xl grayscale'
             : 'scale-100 blur-0 grayscale-0'
         }}`}
-        onLoadingComplete={() => setIsLoading(false)}
+        onLoad={() => setIsLoading(false)}
       />
     )}
   </>
